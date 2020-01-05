@@ -6,6 +6,8 @@
 
 This module uses [OpenDota API](https://docs.opendota.com/) to load all of the available Dota 2 heroes.
 
+[![Build Status](https://travis-ci.com/peterdee/ts-classes.svg?branch=master)](https://travis-ci.com/peterdee/ts-classes)
+
 [![Known Vulnerabilities](https://snyk.io/test/github/peterdee/ts-classes/badge.svg?targetFile=package.json)](https://snyk.io/test/github/peterdee/ts-classes?targetFile=package.json)
 
 ### Installation
