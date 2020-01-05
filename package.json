@@ -1,6 +1,6 @@
 {
   "name": "ts-classes-examplary-module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Peter Dyumin",
     "url": "https://github.com/peterdee"
@@ -17,12 +17,12 @@
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
-    "postversion" : "git push && git push --tags",
-    "prepare" : "npm run build",
-    "prepublishOnly" : "npm test && npm run lint",
-    "preversion" : "npm run lint",
+    "postversion": "git push && git push --tags",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
     "test": "jest --config jestconfig.json",
-    "version" : "npm run format && git add -A src"
+    "version": "npm run format && git add -A src"
   },
   "engines": {
     "node": "13.5.0",
