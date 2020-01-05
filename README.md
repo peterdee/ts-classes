@@ -13,7 +13,7 @@ This module uses [OpenDota API](https://docs.opendota.com/) to load all of the a
 ### Installation
 
 ```bash
-npm i <MODULE_NAME>
+npm i ts-classes-examplary-module
 ```
 
 ### Usage
@@ -21,7 +21,7 @@ npm i <MODULE_NAME>
 Create an instance of the module:
 
 ```javascript
-const { DotaHeroes } = require('<MODULE_NAME>');
+const { DotaHeroes } = require('ts-classes-examplary-module');
 const Instance = new DotaHeroes();
 ```
 
