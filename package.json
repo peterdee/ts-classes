@@ -8,10 +8,15 @@
   "description": "This is an examplary module with Typescript",
   "homepage": "https://github.com/peterdee/ts-classes",
   "main": "build/index.js",
+  "files": [
+    "build/**/*"
+  ],
   "license": "ISC",
   "scripts": {
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "test": "jest --config jestconfig.json"
   },
   "engines": {
     "node": "13.5.0",
@@ -28,7 +33,13 @@
     "Typescript"
   ],
   "devDependencies": {
+    "@types/jest": "^24.0.25",
     "@types/node": "^13.1.4",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "ts-jest": "^24.2.0",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.7.4"
   }
 }

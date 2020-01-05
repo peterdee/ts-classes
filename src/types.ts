@@ -1,8 +1,9 @@
 export interface Hero {
-  id: number;
-  name: string;
-  localized_name: string;
-  primary_attr: string;
   attack_type: string;
+  id: number;
+  legs: number;
+  localized_name: string;
+  name: string;
+  primary_attr: string;
   roles: string[];
-};
+}
