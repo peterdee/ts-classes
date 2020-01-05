@@ -23,7 +23,7 @@ const { DotaHeroes } = require('<MODULE_NAME>');
 const Instance = new DotaHeroes();
 ```
 
-Then use it to load the available heroes list:
+Then use it to load the available heroes list with the `getHeroes` method:
 
 ```javascript
 const heroes = await Instance.getHeroes();
