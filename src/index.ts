@@ -1,13 +1,27 @@
-export class SomeModule {
-  private key: string;
-  private secret: string;
+import * as https from 'https';
+import { IncomingMessage } from 'http';
 
-  constructor(key: string, secret: string) {
-    this.key = key;
-    this.secret = secret;
-  }
+import { Hero } from './types';
 
-  showPrivate(): string {
-    return `key: ${this.key}, secret: ${this.secret}`;
+export class DotaHeroes {
+  private hostname: string = 'api.opendota.com';
+
+  getHeroes(): Promise<Hero[]> {
+    return new Promise((resolve, reject) => https.get({
+      hostname: this.hostname,
+      method: 'GET',
+      path: '/api/heroes',
+      port: 443,
+    }, (response: IncomingMessage): void => {
+      let data: string = '';
+      response.setEncoding('utf8');
+      response.on('readable', (): void => {
+        const chunk: string = response.read();
+        if (chunk !== null) {
+          data += chunk;
+        }
+      });
+      response.on('end', (): void => resolve(JSON.parse(data)));
+    }).on('error', (error): void => reject(error)));
   }
 }
