@@ -1,22 +1,28 @@
 {
-  "name": "ts-classes",
-  "version": "0.0.1",
+  "name": "ts-classes-examplary-module",
+  "version": "1.0.0",
   "author": {
     "name": "Peter Dyumin",
     "url": "https://github.com/peterdee"
   },
   "description": "This is an examplary module with Typescript",
   "homepage": "https://github.com/peterdee/ts-classes",
-  "main": "build/index.js",
   "files": [
     "build/**/*"
   ],
+  "types": "build/index.d.ts",
+  "main": "build/index.js",
   "license": "ISC",
   "scripts": {
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
-    "test": "jest --config jestconfig.json"
+    "postversion" : "git push && git push --tags",
+    "prepare" : "npm run build",
+    "prepublishOnly" : "npm test && npm run lint",
+    "preversion" : "npm run lint",
+    "test": "jest --config jestconfig.json",
+    "version" : "npm run format && git add -A src"
   },
   "engines": {
     "node": "13.5.0",
